@@ -1,10 +1,12 @@
 name: Actions Workflow
 
-on: 
-  push:
+on:
+  schedule:
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *"
+  # push:
   pull_request:
     types: [closed, assigned,opened,reopened]
-# this commit will test the pull request on github actions
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
